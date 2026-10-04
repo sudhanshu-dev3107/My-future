@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UKSSSC Kanishth Sahayak | PYQ Prep</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">UK</span><div><b>UKSSSC Prep</b><small>Kanishth Sahayak • Junior Assistant</small></div></div>
+  <button id="themeBtn" class="iconbtn">☾</button>
+</header>
+
+<div class="app">
+<aside class="sidebar">
+  <button class="nav active" data-page="dashboard">⌂ <span>Dashboard</span></button>
+  <button class="nav" data-page="analysis">▦ <span>PYQ Analysis</span></button>
+  <button class="nav" data-page="practice">✓ <span>Practice</span></button>
+  <button class="nav" data-page="mock">⏱ <span>Mock Test</span></button>
+  <button class="nav" data-page="review">⚑ <span>Review</span></button>
+  <div class="side-note"><b>Exam model</b><br>140 marks • 150 min<br>−0.25 wrong answer</div>
+</aside>
+
+<main>
+<section id="dashboard" class="page active">
+  <div class="hero">
+    <div><span class="eyebrow">PYQ-FIRST PREPARATION</span><h1>Prepare smarter for<br><span>UKSSSC Junior Assistant</span></h1>
+    <p>Uploaded PYQs → topic analysis → targeted practice → timed mock test.</p>
+    <div class="actions"><button class="primary" data-go="mock">Start Mock Test</button><button class="secondary" data-go="practice">Practice Topics</button></div></div>
+    <div class="hero-card"><b>Exam snapshot</b><div class="big">140</div><small>Written marks</small><hr><b>150 min</b><small>Duration</small><hr><b>−0.25</b><small>Negative marking</small></div>
+  </div>
+  <div class="stats" id="dashStats"></div>
+  <div class="grid2">
+    <div class="card"><h2>Priority map</h2><div id="priorityBars"></div></div>
+    <div class="card"><h2>How to use</h2><ol class="steps"><li>Study Uttarakhand GK + Hindi first.</li><li>Practice weak topics in short sets.</li><li>Take 30-question mocks under time pressure.</li><li>Review every wrong answer.</li></ol></div>
+  </div>
+</section>
+
+<section id="analysis" class="page">
+  <div class="section-head"><div><span class="eyebrow">WHAT THE PAPERS SHOW</span><h1>PYQ Analysis</h1></div><span class="pill">5 PDFs • 4 unique sets</span></div>
+  <div class="analysis-grid">
+    <div class="card"><h2>High-priority subjects</h2><div id="subjectAnalysis"></div></div>
+    <div class="card"><h2>Repeated topic clusters</h2><div id="topicList"></div></div>
+  </div>
+  <div class="card"><h2>Paper inventory</h2>
+    <div class="table-wrap"><table><thead><tr><th>Paper</th><th>Year</th><th>Use</th><th>Observation</th></tr></thead><tbody>
+      <tr><td>Junior Assistant</td><td>2016</td><td>Core PYQ</td><td>Strong Hindi + aptitude + general awareness</td></tr>
+      <tr><td>Various Posts / JA-DEO</td><td>2021</td><td>Pattern support</td><td>Useful for Group-C style overlap</td></tr>
+      <tr><td>Inter Level / Excise Constable</td><td>2024</td><td>State-level support</td><td>Strong Uttarakhand culture/GK + Hindi</td></tr>
+      <tr><td>Junior Assistant</td><td>2025</td><td>Most recent JA signal</td><td>Uttarakhand-specific factual questions are important</td></tr>
+      <tr><td>Junior Assistant duplicate</td><td>2016</td><td>Duplicate</td><td>Same 2016 paper copy; counted once for pattern</td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="warning">Important: this analysis is based on the supplied PDFs. Some PDFs are scan/image based, so OCR quality can affect individual wording. Verify final syllabus/skill-test rules against the latest official UKSSSC notification.</div>
+</section>
+
+<section id="practice" class="page">
+  <div class="section-head"><div><span class="eyebrow">TARGETED PRACTICE</span><h1>Practice Questions</h1></div></div>
+  <div class="filters">
+    <select id="subjectFilter"><option>All Subjects</option></select>
+    <select id="sourceFilter"><option>All Sources</option><option>PYQ</option><option>Practice</option></select>
+    <button class="secondary" id="shuffleBtn">Shuffle</button>
+  </div>
+  <div id="practiceArea"></div>
+</section>
+
+<section id="mock" class="page">
+  <div id="mockStart" class="card mock-start">
+    <span class="eyebrow">TIMED TEST</span><h1>UKSSSC Mini Mock</h1>
+    <p>30 questions • 30 minutes • +1 correct • −0.25 wrong • 0 unanswered.</p>
+    <label>Question count <select id="mockCount"><option>20</option><option selected>30</option><option>40</option></select></label>
+    <button class="primary" id="startMock">Begin Test</button>
+  </div>
+  <div id="mockTest" class="hidden">
+    <div class="testbar"><div><b id="qProgress">Question 1/30</b><small id="qSubject"></small></div><div class="timer" id="timer">30:00</div></div>
+    <div class="question-card"><div id="mockQuestion"></div><div id="mockOptions"></div></div>
+    <div class="test-actions"><button class="secondary" id="prevQ">Previous</button><button class="secondary" id="nextQ">Next</button><button class="danger" id="submitMock">Submit Test</button></div>
+  </div>
+  <div id="mockResult" class="hidden"></div>
+</section>
+
+<section id="review" class="page">
+  <div class="section-head"><div><span class="eyebrow">YOUR PROGRESS</span><h1>Review & Weak Areas</h1></div></div>
+  <div id="reviewArea"></div>
+</section>
+</main>
+</div>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
